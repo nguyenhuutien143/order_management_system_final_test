@@ -31,10 +31,10 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public CustomerDTO findById(Long id) {
-        return CustomerDTO.Mapper.fromEntity(customerRepository.findById(id).orElseThrow(() -> {
-            throw new CustomerNotFoundException(String.format("Not found order with id %s",id));})
-                );
+    public Customer findById(Long id) {
+        Customer customer = customerRepository.findById(id).get();
+        if(customer==null) throw new CustomerNotFoundException(String.format("customer not found"));
+        return customer;
     }
 
     @Override

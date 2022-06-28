@@ -10,11 +10,6 @@ import java.util.List;
 
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Long> {
-//    @Query("select p from Product p")
-//    List<ProductDTO> findAllWithNameOnly();
 
-    List<ProductDTO> findAllProjectedBy();
-
-    List<ProductDTO> findAllByName(String productName);
 
 }

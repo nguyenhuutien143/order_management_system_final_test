@@ -10,7 +10,7 @@ import java.util.Optional;
 
 public interface CustomerService {
     Page<CustomerDTO> findAll(Pageable pageable);
-    CustomerDTO findById(Long id);
+    Customer findById(Long id);
     Page<CustomerDTO> Create(CustomerDTO customerDTO, Pageable pageable );
     CustomerDTO Update(Long id, CustomerDTO customerDTO);
     void Delete(Long id);

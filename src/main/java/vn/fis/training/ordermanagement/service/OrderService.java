@@ -13,7 +13,7 @@ public interface OrderService {
     Page<OrderDTO> findAll(Pageable pageable);
     Page<OrderDTO> findAllPaidOrders(Pageable pageable);
 
-    OrderDTO findById(Long orderId);
+    Order findById(Long id);
     Order addOrderItem(CreateOrderItemDTO createOrderItemDTO);
 //    List<Order> ORDER_LIST(QueryOrderDTO queryOrderDTO);
 Order create(CreateOrderDTO createOrderDTO);

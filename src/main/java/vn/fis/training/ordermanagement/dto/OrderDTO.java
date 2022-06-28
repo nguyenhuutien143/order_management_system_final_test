@@ -38,5 +38,14 @@ public class OrderDTO {
                     .status(order.getStatus())
                     .build();
         }
+        public static  Order fromEntityDTO(OrderDTO orderDTO) {
+            return Order.builder().id(orderDTO.getId())
+                    .orderDateTime(orderDTO.getOrderDateTime())
+                    .orderItems(orderDTO.getOrderItems())
+                    .id(orderDTO.getCustomerId())
+                    .totalAmount(orderDTO.getTotalAmount())
+                    .status(orderDTO.getStatus())
+                    .build();
+        }
     }
 }
