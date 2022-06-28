@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 import vn.fis.training.ordermanagement.exception.*;
+import vn.fis.training.ordermanagement.model.Product;
 
 import static vn.fis.training.ordermanagement.constant.Constant.*;
 
@@ -41,9 +42,9 @@ public class ApplicationExceptionHandler extends ResponseEntityExceptionHandler 
                 .body(ErrorMessage.builder().code(ORDER_NOT_FOUND).message(e.getMessage()).build());
     }
     @ExceptionHandler(value = {
-            OrderNotFoundException.class
+            ProductNotFoundException.class
     })
-    protected ResponseEntity<ErrorMessage> handlerProductNotFoundException(OrderNotFoundException e){
+    protected ResponseEntity<ErrorMessage> handlerProductNotFoundException(ProductNotFoundException e){
         return ResponseEntity.status(HttpStatus.BAD_REQUEST)
                 .body(ErrorMessage.builder().code(PRODUCT_NOT_FOUND).message(e.getMessage()).build());
     }
